@@ -2,8 +2,7 @@ Readme - v.1.0 - 2024-08-20
 
 This is the main (and actually only) code file for my 7D2D xml helper file
 
-You can use the code to adjust the adjusted values, e.g. you think the cities are too large with my values.
-
+You can check/adjust the code to the optimize the setting, e.g. you think the cities are too large with my values.
 
 The tool is no actual mod but a .exe to help you adjusting various xml files (configuration files) from 7d2d.
 Download links:
