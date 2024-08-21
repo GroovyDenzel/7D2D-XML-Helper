@@ -4,7 +4,8 @@ This is the main code file for my 7D2D xml helper program.
 
 You can check/adjust the code to optimize the setting, e.g. you think the cities are too large with my values.
 
-Now just some general info about the mod you also read at nexus, steam and 7daysmods:
+Now just some general info about the program you also read at nexus, steam and 7daysmods:
+
 The tool is no actual mod but a .exe to help you adjusting various xml files (configuration files) from 7d2d.
 Download links:
 • https://drive.google.com/file/d/193Yag3wN1o39Rp6gyvpxVZF4rb33cDWb/view?usp=drive_link
