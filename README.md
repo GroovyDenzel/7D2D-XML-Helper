@@ -8,9 +8,10 @@ Now just some general info about the program you also read at nexus, steam and 7
 
 The tool is no actual mod but a .exe to help you adjusting various xml files (configuration files) from 7d2d.
 Download links:
-• https://drive.google.com/file/d/193Yag3wN1o39Rp6gyvpxVZF4rb33cDWb/view?usp=drive_link
-• https://7daystodiemods.com/xml-helper-and-map-check/
-• Nexus link will follow
+
+• https://7daystodiemods.com/xml-helper-and-map-check
+
+• https://www.nexusmods.com/7daystodie/mods/5778
 
 
 Unpack the zip file and double click the XML Helper and Map Check.exe.
