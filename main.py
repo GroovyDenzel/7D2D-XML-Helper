@@ -549,20 +549,23 @@ def adjust_trader(data_trader, trader_c="rekt", choice_c="default"):
 
 
 def poi_fix(choice_c="default"):
-    poi1 = directory + "/Data/Prefabs/POIs/cave_04.xml"
-    poi2 = directory + "/Data/Prefabs/POIs/church_sm_01.xml"
-    poi3 = directory + "/Data/Prefabs/POIs/city_center_01.xml"
-    poi4 = directory + "/Data/Prefabs/POIs/commercial_strip_01.xml"
-    poi5 = directory + "/Data/Prefabs/POIs/gas_station_02.xml"
-    poi6 = directory + "/Data/Prefabs/POIs/house_modern_02.xml"
-    poi7 = directory + "/Data/Prefabs/POIs/house_old_ranch_12.xml"
-    data_poi_list = [poi1, poi2, poi3, poi4, poi5, poi6, poi7]
+    poi01 = directory + "/Data/Prefabs/POIs/cave_04.xml"
+    poi02 = directory + "/Data/Prefabs/POIs/church_sm_01.xml"
+    poi03 = directory + "/Data/Prefabs/POIs/city_center_01.xml"
+    poi04 = directory + "/Data/Prefabs/POIs/commercial_strip_01.xml"
+    poi05 = directory + "/Data/Prefabs/POIs/gas_station_02.xml"
+    poi06 = directory + "/Data/Prefabs/POIs/house_modern_02.xml"
+    poi07 = directory + "/Data/Prefabs/POIs/house_old_ranch_12.xml"
+    poi08 = directory + "/Data/Prefabs/POIs/factory_01.xml"
+    poi09 = directory + "/Data/Prefabs/POIs/factory_02.xml"
+    poi10 = directory + "/Data/Prefabs/POIs/utility_refinery_02.xml"
+    data_poi_list = [poi01, poi02, poi03, poi04, poi05, poi06, poi07, poi08, poi09, poi10]
     for poi_item in data_poi_list:
         data_poi = poi_item
         save_file(data_poi)
         poi_xml_file = et.parse(data_poi)
         poi_xml = poi_xml_file.getroot()
-        if data_poi == poi1:
+        if data_poi == poi01:
             property_change = poi_xml.find(".//property[@name='Tags']")
             if property_change is None:
                 if choice_c == "fix":
@@ -571,7 +574,7 @@ def poi_fix(choice_c="default"):
                 if choice_c == "default":
                     poi_xml.remove(property_change)
 
-        if data_poi == poi2:
+        if data_poi == poi02:
             property_change = poi_xml.find(".//property[@name='Tags']")
             if property_change is None:
                 if choice_c == "fix":
@@ -599,7 +602,7 @@ def poi_fix(choice_c="default"):
                 elif choice_c == "default":
                     property_change.set("value", "ResidentialOld")
 
-        if data_poi == poi3:
+        if data_poi == poi03:
             property_change = poi_xml.find(".//property[@name='Tags']")
             if property_change is not None:
                 if choice_c == "fix":
@@ -620,7 +623,7 @@ def poi_fix(choice_c="default"):
                 elif choice_c == "default":
                     property_change.set("value", "none")
 
-        if data_poi == poi4:
+        if data_poi == poi04:
             property_change = poi_xml.find(".//property[@name='Tags']")
             if property_change is not None:
                 if choice_c == "fix":
@@ -634,7 +637,7 @@ def poi_fix(choice_c="default"):
                 elif choice_c == "default":
                     property_change.set("value", "countrytown#countrytown")
 
-        if data_poi == poi5:
+        if data_poi == poi05:
             property_change = poi_xml.find(".//property[@name='Tags']")
             if property_change is not None:
                 if choice_c == "fix":
@@ -648,7 +651,7 @@ def poi_fix(choice_c="default"):
                 elif choice_c == "default":
                     property_change.set("value", "##gateway#gateway")
 
-        if data_poi == poi6:
+        if data_poi == poi06:
             property_change = poi_xml.find(".//property[@name='Tags']")
             if property_change is not None:
                 if choice_c == "fix":
@@ -674,12 +677,55 @@ def poi_fix(choice_c="default"):
                 elif choice_c == "default":
                     property_change.set("value", "house new")
 
-        if data_poi == poi7:
+        if data_poi == poi07:
             property_change = poi_xml.find(".//property[@name='Tags']")
             if choice_c == "fix":
                 property_change.set("value", "rural")
             elif choice_c == "default":
                 property_change.set("value", "countryresidential")
+
+        if data_poi == poi08:
+            property_change = poi_xml.find(".//property[@name='Tags']")
+            if property_change is not None:
+                if choice_c == "fix":
+                    property_change.set("value", "industrial, rural")
+                elif choice_c == "default":
+                    property_change.set("value", "industrial")
+            property_change = poi_xml.find(".//property[@name='EditorGroups']")
+            if property_change is not None:
+                if choice_c == "fix":
+                    property_change.set("value", "industrial, rural")
+                elif choice_c == "default":
+                    property_change.set("value", "industrial")
+
+        if data_poi == poi09:
+            property_change = poi_xml.find(".//property[@name='Tags']")
+            if property_change is not None:
+                if choice_c == "fix":
+                    property_change.set("value", "industrial, rural")
+                elif choice_c == "default":
+                    property_change.set("value", "industrial")
+            property_change = poi_xml.find(".//property[@name='EditorGroups']")
+            if property_change is not None:
+                if choice_c == "fix":
+                    property_change.set("value", "industrial, rural")
+                elif choice_c == "default":
+                    property_change.set("value", "industrial")
+
+        if data_poi == poi10:
+            property_change = poi_xml.find(".//property[@name='Tags']")
+            if property_change is not None:
+                if choice_c == "fix":
+                    property_change.set("value", "industrial, rural")
+                elif choice_c == "default":
+                    property_change.set("value", "industrial")
+            property_change = poi_xml.find(".//property[@name='POIMarkerTags']")
+            if property_change is not None:
+                if choice_c == "fix":
+                    property_change.set("value", "industrial, rural")
+                elif choice_c == "default":
+                    property_change.set("value", "industrial")
+
         xml_str = et.tostring(poi_xml,
                               encoding="UTF-8",
                               xml_declaration=True)
@@ -1694,59 +1740,59 @@ def townrandomizer(bs_data, choice="default"):
 def districtcolors(bs_data, choice="optimized"):
     if choice == "optimized":
         tag = set_tag(bs_data, "district", "countrytown")
-        detail = set_property(tag, "name", "district_preview_color")
+        detail = set_property(tag, "name", "preview_color")
         set_value(detail, "0,0,1")
         tag = set_tag(bs_data, "district", "countryresidential")
-        detail = set_property(tag, "name", "district_preview_color")
+        detail = set_property(tag, "name", "preview_color")
         set_value(detail, "0,1,0")
         tag = set_tag(bs_data, "district", "commercial")
-        detail = set_property(tag, "name", "district_preview_color")
+        detail = set_property(tag, "name", "preview_color")
         set_value(detail, "0,1,1")
         tag = set_tag(bs_data, "district", "industrial")
-        detail = set_property(tag, "name", "district_preview_color")
+        detail = set_property(tag, "name", "preview_color")
         set_value(detail, "1,0,0")
         tag = set_tag(bs_data, "district", "residential")
-        detail = set_property(tag, "name", "district_preview_color")
+        detail = set_property(tag, "name", "preview_color")
         set_value(detail, "1,0,1")
         tag = set_tag(bs_data, "district", "rural")
-        detail = set_property(tag, "name", "district_preview_color")
+        detail = set_property(tag, "name", "preview_color")
         set_value(detail, "1,1,0")
         tag = set_tag(bs_data, "district", "downtown")
-        detail = set_property(tag, "name", "district_preview_color")
+        detail = set_property(tag, "name", "preview_color")
         set_value(detail, "0,0,0")
         tag = set_tag(bs_data, "district", "oldwest")
-        detail = set_property(tag, "name", "district_preview_color")
+        detail = set_property(tag, "name", "preview_color")
         set_value(detail, "0,0,1")
         tag = set_tag(bs_data, "district", "gateway")
-        detail = set_property(tag, "name", "district_preview_color")
+        detail = set_property(tag, "name", "preview_color")
         set_value(detail, "0.5,0.5,0.5")
     elif choice == "default":
         tag = set_tag(bs_data, "district", "countrytown")
-        detail = set_property(tag, "name", "district_preview_color")
+        detail = set_property(tag, "name", "preview_color")
         set_value(detail, "0,0,1")
         tag = set_tag(bs_data, "district", "countryresidential")
-        detail = set_property(tag, "name", "district_preview_color")
+        detail = set_property(tag, "name", "preview_color")
         set_value(detail, "0,1,0")
         tag = set_tag(bs_data, "district", "commercial")
-        detail = set_property(tag, "name", "district_preview_color")
+        detail = set_property(tag, "name", "preview_color")
         set_value(detail, "0,0,1")
         tag = set_tag(bs_data, "district", "industrial")
-        detail = set_property(tag, "name", "district_preview_color")
+        detail = set_property(tag, "name", "preview_color")
         set_value(detail, "1,1,0")
         tag = set_tag(bs_data, "district", "residential")
-        detail = set_property(tag, "name", "district_preview_color")
+        detail = set_property(tag, "name", "preview_color")
         set_value(detail, "0,1,0")
         tag = set_tag(bs_data, "district", "rural")
-        detail = set_property(tag, "name", "district_preview_color")
+        detail = set_property(tag, "name", "preview_color")
         set_value(detail, "0,1,1")
         tag = set_tag(bs_data, "district", "downtown")
-        detail = set_property(tag, "name", "district_preview_color")
+        detail = set_property(tag, "name", "preview_color")
         set_value(detail, "0.5,0.5,0.5")
         tag = set_tag(bs_data, "district", "oldwest")
-        detail = set_property(tag, "name", "district_preview_color")
+        detail = set_property(tag, "name", "preview_color")
         set_value(detail, "0.5,0.5,0.1")
         tag = set_tag(bs_data, "district", "gateway")
-        detail = set_property(tag, "name", "district_preview_color")
+        detail = set_property(tag, "name", "preview_color")
         set_value(detail, "0.5,0.5,0.1")
 
 
