@@ -1,4 +1,4 @@
-Readme - v.1.0 - 2024-08-20
+Readme - v.1.1 - 2024-11-10
 
 This is the main code file for my 7D2D xml helper program.
 
